@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umesh Jadhav — Software Engineer</title>
+<meta name="description" content="Umesh Jadhav — Software Engineer specializing in Full-Stack Development, AWS Cloud & DevOps, and DSA in C++. Open to SDE & Cloud internships and full-time roles.">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Umesh Jadhav — Software Engineer">
+<meta property="og:description" content="AWS Cloud & DevOps · Full-Stack · DSA in C++. Open to SDE & Cloud internships and full-time roles.">
+<meta property="og:image" content="assets/umesh-cutout.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="boot"><pre id="bootText"></pre></div>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="bgcanvas"></canvas>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">UMESH<span>_</span>J</div>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">about</a>
+      <a href="#stack">stack</a>
+      <a href="#experience">experience</a>
+      <a href="#achievements">achievements</a>
+      <a href="#work">projects</a>
+      <a href="#contact">contact</a>
+      <a href="assets/Umesh_Jadhav_Resume.pdf" class="nav-resume" download>Resume ↓</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">OPEN TO SDE &amp; CLOUD ROLES</div>
+      <h1><span id="typed"></span></h1>
+      <div class="role">Software Engineer — <b>AWS Cloud &amp; DevOps</b> · <b>Full-Stack</b> · <b>DSA in C++</b></div>
+      <p class="desc">Final-year B.E. student in AI &amp; Data Science, Nashik, building my way from strong fundamentals to real products. I enjoy turning ideas into working software and learning by shipping.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn primary">view_projects()</a>
+        <a href="assets/Umesh_Jadhav_Resume.pdf" class="btn ghost" download>download_resume()</a>
+        <a href="#contact" class="btn ghost">contact_me()</a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/DevUmeshh" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/umeshjadhav09" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://www.instagram.com/umeshh.jadhav" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+        <a href="mailto:umeshrajput24196@gmail.com" aria-label="Email">Email</a>
+        <a href="#" class="placeholder-link" data-placeholder="Add your LeetCode / Codeforces / GFG profile link here" aria-label="Coding profile">Coding Profile <span class="ph-tag">add link</span></a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="figure3d" id="card3d">
+        <div class="glow-blob blob-green"></div>
+        <div class="glow-blob blob-violet"></div>
+        <div class="glass-panel"></div>
+        <img class="cutout" src="assets/umesh-cutout.png" alt="Umesh Jadhav" width="820" height="994">
+        <div class="cardlabel">
+          <span class="name">Umesh Jadhav</span>
+          <span class="live"><span class="live-dot"></span>ACTIVE</span>
+        </div>
+        <div class="floatchip fc1"><span class="fc-dot"></span>status: <b>open_to_work</b></div>
+        <div class="floatchip fc2"><span class="fc-marker">/</span>location: <b>nashik_in</b></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">About</span></div>
+    <div class="about-grid reveal">
+      <p class="about-text">I'm a final-year B.E. student in Artificial Intelligence &amp; Data Science at Savitribai Phule Pune University. My focus right now is DSA in C++ for strong problem-solving fundamentals, alongside building full-stack SaaS projects and hands-on AWS Cloud &amp; DevOps work. I like turning half-formed ideas into things that actually run in production.</p>
+      <div class="about-facts">
+        <div class="fact"><div class="k">Location</div><div class="v">Nashik, Maharashtra, India</div></div>
+        <div class="fact"><div class="k">Education</div><div class="v">B.E. AI &amp; Data Science, SPPU (2024–2027)</div></div>
+        <div class="fact"><div class="k">Status</div><div class="v">Open to SDE &amp; Cloud internships / full-time</div></div>
+        <div class="fact"><div class="k">Languages</div><div class="v">English, Hindi, Marathi</div></div>
+        <div class="fact fact-placeholder">
+          <div class="k">Coding Profile</div>
+          <div class="v">Add LeetCode / Codeforces / GFG link <span class="ph-tag">add link</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="honors reveal">
+      <div class="honor-badge"><span class="hb-tag">rank</span>1st Ranker — Gold Medalist</div>
+      <div class="honor-badge"><span class="hb-tag">cert</span>Cloud Computing with AWS</div>
+      <div class="honor-badge"><span class="hb-tag">event</span>Goda Tech Challenge 2026 — Hackathon Participant</div>
+      <div class="honor-badge"><span class="hb-tag">cert</span>Data Structures in C++</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="stack">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Tech stack</span></div>
+
+    <div class="stack-groups reveal">
+      <div class="stack-group">
+        <h3>Full-Stack Development</h3>
+        <div class="skill-row">
+          <span class="pill">JavaScript</span>
+          <span class="pill">React</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Express</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">HTML / CSS</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="skill-row">
+          <span class="pill">AWS EC2</span>
+          <span class="pill">AWS S3</span>
+          <span class="pill">AWS IAM</span>
+          <span class="pill">CI/CD Pipelines</span>
+          <span class="pill">Docker</span>
+          <span class="pill">Git / GitHub</span>
+          <span class="pill">Linux</span>
+          <span class="pill">Bash Scripting</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>Core CS &amp; Data</h3>
+        <div class="skill-row">
+          <span class="pill">C++ (DSA)</span>
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills reveal">
+      <div class="skillrow"><span>C++ / DSA</span><div class="bar"><div class="fill" data-pct="88"></div></div><span class="pct">88%</span></div>
+      <div class="skillrow"><span>AWS Cloud / DevOps</span><div class="bar"><div class="fill" data-pct="85"></div></div><span class="pct">85%</span></div>
+      <div class="skillrow"><span>JavaScript / React</span><div class="bar"><div class="fill" data-pct="80"></div></div><span class="pct">80%</span></div>
+      <div class="skillrow"><span>Python</span><div class="bar"><div class="fill" data-pct="78"></div></div><span class="pct">78%</span></div>
+      <div class="skillrow"><span>Linux / Bash</span><div class="bar"><div class="fill" data-pct="82"></div></div><span class="pct">82%</span></div>
+      <div class="skillrow"><span>SQL</span><div class="bar"><div class="fill" data-pct="72"></div></div><span class="pct">72%</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Experience</span></div>
+
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-top">
+            <h3>DevOps (AWS) Intern</h3>
+            <span class="tl-date">Jan 2026 – Feb 2026</span>
+          </div>
+          <div class="tl-org">Arrow Technologies and Solutions · Nashik</div>
+          <ul>
+            <li>Executed end-to-end deployment workflows on AWS, reducing manual intervention in release cycles by applying CI/CD best practices.</li>
+            <li>Managed Linux-based systems and automated routine tasks via shell scripts, cutting repetitive ops time.</li>
+            <li>Collaborated cross-functionally on system management tasks in a live DevOps environment.</li>
+          </ul>
+          <div class="proj-tags"><span>AWS EC2/S3</span><span>Git</span><span>Linux</span><span>Bash</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-top">
+            <h3>AWS DevOps Engineer</h3>
+            <span class="tl-date">Aug 2025 – Oct 2025</span>
+          </div>
+          <div class="tl-org">Sumago Infotech Pvt. Ltd. · Nashik</div>
+          <ul>
+            <li>Designed and maintained CI/CD pipelines using Git/GitHub, streamlining deployment workflows across multiple projects.</li>
+            <li>Provisioned and configured AWS cloud infrastructure (EC2, S3, IAM), supporting team deployment operations.</li>
+            <li>Automated environment setup and system monitoring using Linux shell scripts, improving setup speed.</li>
+            <li>Gained hands-on exposure to the full DevOps lifecycle: code → build → test → deploy → monitor.</li>
+          </ul>
+          <div class="proj-tags"><span>AWS (EC2, S3, IAM)</span><span>GitHub</span><span>CI/CD</span><span>Bash</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study reveal">
+      <div class="cs-tag">FEATURED — BUILD STORY</div>
+      <h3>Cutting a manual AWS deploy down to one repeatable pipeline</h3>
+      <div class="cs-grid">
+        <div class="cs-block">
+          <div class="cs-label">Problem</div>
+          <p>At Sumago Infotech, releases across multiple projects were being deployed to AWS by hand — every deploy meant repeating the same EC2/S3 setup steps, which was slow and easy to get wrong.</p>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">Approach</div>
+          <p>Designed and maintained CI/CD pipelines with Git/GitHub, provisioned and configured the AWS infrastructure (EC2, S3, IAM), and wrote Linux shell scripts to automate environment setup and monitoring instead of doing it manually each time.</p>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">Result</div>
+          <p>Deployment workflows became streamlined and repeatable across projects, environment setup got noticeably faster, and I came away with hands-on exposure to the full lifecycle: code → build → test → deploy → monitor.</p>
+        </div>
+      </div>
+      <div class="proj-tags"><span>AWS EC2/S3/IAM</span><span>Git/GitHub</span><span>CI/CD</span><span>Bash</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="achievements">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Achievements</span></div>
+    <p class="sec-note reveal">Moments from three years of B.E. — hover to pause, tap on mobile.</p>
+  </div>
+
+  <div class="marquee-outer reveal">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="ach-card">
+        <img src="assets/achievements/ach-2.jpg" alt="Umesh Jadhav receiving certificate at First Year Induction Programme" loading="lazy">
+        <div class="ach-cap"><div class="ach-year">1ST YEAR · 2024</div><div class="ach-title">Induction Programme, Batch 2024–25</div></div>
+      </div>
+      <div class="ach-card">
+        <img src="assets/achievements/ach-1.jpg" alt="Umesh Jadhav felicitated on stage at JIT Nashik annual event" loading="lazy">
+        <div class="ach-cap"><div class="ach-year">JIT NASHIK</div><div class="ach-title">Felicitated on Stage — Annual Event</div></div>
+      </div>
+      <div class="ach-card">
+        <img src="assets/achievements/ach-3.jpg" alt="Umesh Jadhav awarded TE Topper medal with CGPA 9.86" loading="lazy">
+        <div class="ach-cap"><div class="ach-year">3RD YEAR · 2026</div><div class="ach-title">TE Topper — CGPA 9.86, AY 2025–26</div></div>
+      </div>
+      <!-- duplicate set for seamless loop -->
+      <div class="ach-card" aria-hidden="true">
+        <img src="assets/achievements/ach-2.jpg" alt="" loading="lazy">
+        <div class="ach-cap"><div class="ach-year">1ST YEAR · 2024</div><div class="ach-title">Induction Programme, Batch 2024–25</div></div>
+      </div>
+      <div class="ach-card" aria-hidden="true">
+        <img src="assets/achievements/ach-1.jpg" alt="" loading="lazy">
+        <div class="ach-cap"><div class="ach-year">JIT NASHIK</div><div class="ach-title">Felicitated on Stage — Annual Event</div></div>
+      </div>
+      <div class="ach-card" aria-hidden="true">
+        <img src="assets/achievements/ach-3.jpg" alt="" loading="lazy">
+        <div class="ach-cap"><div class="ach-year">3RD YEAR · 2026</div><div class="ach-title">TE Topper — CGPA 9.86, AY 2025–26</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Selected projects</span></div>
+    <p class="sec-note reveal"><span class="note-prefix">//</span> the 3 cards below are placeholders, not real repos — swap in your actual projects, links, and screenshots. see the README for exactly where to edit.</p>
+
+    <div class="proj-grid reveal">
+      <div class="proj-card is-placeholder">
+        <span class="ph-ribbon">placeholder</span>
+        <div class="proj-idx">PROJECT / 01</div>
+        <h3>CloudDeploy Pipeline</h3>
+        <p>An automated CI/CD pipeline on AWS (EC2 + S3) that builds, tests, and deploys projects on every push, cutting manual release steps.</p>
+        <div class="proj-tags"><span>AWS</span><span>GitHub Actions</span><span>Bash</span></div>
+        <div class="proj-links">
+          <a href="#" target="_blank" rel="noopener">Live ↗</a>
+          <a href="#" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+      <div class="proj-card is-placeholder">
+        <span class="ph-ribbon">placeholder</span>
+        <div class="proj-idx">PROJECT / 02</div>
+        <h3>DSA Visualizer (C++)</h3>
+        <p>An interactive visualizer for sorting algorithms and data structures, built to make abstract DSA concepts easy to see and reason about.</p>
+        <div class="proj-tags"><span>C++</span><span>Algorithms</span><span>DSA</span></div>
+        <div class="proj-links">
+          <a href="#" target="_blank" rel="noopener">Live ↗</a>
+          <a href="#" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+      <div class="proj-card is-placeholder">
+        <span class="ph-ribbon">placeholder</span>
+        <div class="proj-idx">PROJECT / 03</div>
+        <h3>TaskFlow — SaaS App</h3>
+        <p>A full-stack task management SaaS with authentication, real-time updates, and cloud deployment on AWS.</p>
+        <div class="proj-tags"><span>React</span><span>Node.js</span><span>AWS</span></div>
+        <div class="proj-links">
+          <a href="#" target="_blank" rel="noopener">Live ↗</a>
+          <a href="#" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+      <div class="proj-card add-card">
+        <div class="add-icon">+</div>
+        <h3>Add your next project</h3>
+        <p>Ship something new, then drop the repo link, live URL, and a screenshot here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Let's talk</span></div>
+    <div class="contact-box reveal">
+      <div class="sec-title">Got a role or project in mind?</div>
+      <p>Open to SDE &amp; Cloud internships and full-time roles — drop a message, I check this inbox daily.</p>
+      <div class="cta-row" style="justify-content:center;">
+        <a href="mailto:umeshrajput24196@gmail.com" class="btn primary">email_me</a>
+        <a href="https://github.com/DevUmeshh" target="_blank" rel="noopener" class="btn ghost">github</a>
+        <a href="https://www.linkedin.com/in/umeshjadhav09" target="_blank" rel="noopener" class="btn ghost">linkedin</a>
+        <a href="https://www.instagram.com/umeshh.jadhav" target="_blank" rel="noopener" class="btn ghost">instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>designed &amp; built by umesh jadhav — nashik, india — © 2026</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
