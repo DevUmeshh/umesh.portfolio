@@ -225,18 +225,18 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,5.2vw,50px);font-
 .cs-block p{font-size:12.5px;color:var(--text);opacity:.85;line-height:1.65;}
 @media(max-width:700px){.cs-grid{grid-template-columns:1fr;}}
 
-/* ACHIEVEMENTS MARQUEE */
-#achievements{padding-bottom:clamp(44px,8vw,70px);}
+/* ACHIEVEMENTS MARQUEE — full-bleed, edge to edge */
+#achievements{padding-bottom:clamp(44px,8vw,70px);overflow-x:clip;}
 #achievements .wrap{margin-bottom:28px;}
 .marquee-outer{
-  overflow:hidden;position:relative;width:100%;
-  -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-  mask-image:linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  overflow:hidden;position:relative;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
 }
 .marquee-track{
-  display:flex;gap:20px;width:max-content;
-  animation:marquee-scroll 32s linear infinite;
-  padding:4px 0 12px;
+  display:flex;gap:clamp(10px,1.4vw,20px);width:max-content;
+  animation:marquee-scroll 42s linear infinite;
+  padding:4px clamp(10px,1.4vw,20px) 14px;
 }
 .marquee-outer:hover .marquee-track,
 .marquee-outer.paused .marquee-track{animation-play-state:paused;}
@@ -246,29 +246,65 @@ h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,5.2vw,50px);font-
 }
 .ach-card{
   position:relative;flex:0 0 auto;
-  width:clamp(240px,30vw,340px);
+  width:clamp(280px, calc((100vw - 90px)/3), 560px);
   aspect-ratio:4/3;
   border-radius:14px;overflow:hidden;
   border:1px solid var(--line);
   box-shadow:0 20px 40px rgba(0,0,0,0.45);
-  transition:transform .3s, border-color .3s;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s;
 }
-.ach-card:hover{transform:translateY(-6px);border-color:var(--green-dim);}
-.ach-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.ach-card:hover{
+  transform:translateY(-8px) scale(1.015);
+  border-color:var(--green-dim);
+  box-shadow:0 28px 54px rgba(0,0,0,0.55), 0 0 0 1px rgba(61,255,160,0.25);
+}
+.ach-card img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(0.82) contrast(1.02);
+  transform:scale(1.04);
+  transition:filter .5s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.ach-card:hover img{filter:saturate(1.08) contrast(1.05);transform:scale(1.1);}
+
+/* shine sweep — subtle periodic light pass */
+.ach-card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.16) 50%, transparent 60%);
+  background-size:220% 220%;
+  background-position:130% 0;
+  animation:ach-shine 7s ease-in-out infinite;
+}
+.ach-card:nth-child(2)::after{animation-delay:1.1s;}
+.ach-card:nth-child(3)::after{animation-delay:2.2s;}
+.ach-card:nth-child(4)::after{animation-delay:3.3s;}
+.ach-card:nth-child(5)::after{animation-delay:4.4s;}
+.ach-card:nth-child(6)::after{animation-delay:5.5s;}
+@keyframes ach-shine{
+  0%{background-position:130% 0;}
+  35%,100%{background-position:-30% 0;}
+}
+
 .ach-cap{
   position:absolute;left:0;right:0;bottom:0;padding:14px 16px;
-  background:linear-gradient(to top, rgba(0,0,0,0.88), rgba(0,0,0,0.35) 65%, transparent);
+  background:linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4) 65%, transparent);
+  transform:translateY(4px);opacity:0.92;
+  transition:transform .35s, opacity .35s;
 }
+.ach-card:hover .ach-cap{transform:translateY(0);opacity:1;}
 .ach-year{font-size:10px;color:var(--green);letter-spacing:1.5px;font-weight:700;margin-bottom:4px;}
 .ach-title{font-size:12.5px;color:var(--white);font-weight:600;line-height:1.4;}
 
 @media(prefers-reduced-motion: reduce){
   .marquee-track{animation:none;}
   .marquee-outer{overflow-x:auto;}
+  .ach-card::after{animation:none;}
+}
+@media(max-width:900px){
+  .ach-card{width:clamp(260px, calc((100vw - 60px)/2), 420px);}
 }
 @media(max-width:600px){
-  .marquee-track{animation-duration:22s;gap:14px;}
-  .ach-card{width:78vw;}
+  .marquee-track{animation-duration:26s;gap:12px;padding:4px 12px 14px;}
+  .ach-card{width:80vw;}
 }
 
 /* PROJECTS */
