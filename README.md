@@ -1,8 +1,8 @@
 # Umesh Jadhav — Portfolio
 
-A static, dependency-free portfolio website built using plain HTML, CSS, and JavaScript. No build tools or frameworks are required.
+This is my personal portfolio website, built from scratch using plain HTML, CSS, and JavaScript. It does not use any framework, package, or build tool, so the project is simple to run and deploy.
 
-The portfolio uses a black terminal-inspired design with a 3D photo card, animated boot sequence, matrix-style background, typewriter effects, and scroll-based animations.
+The design follows a dark terminal-inspired style with interactive elements such as a 3D profile card, boot animation, matrix background, typewriter effect, and smooth scroll animations.
 
 ## Project Structure
 
@@ -23,19 +23,19 @@ portfolio/
 └── README.md
 ```
 
-### Main Files
+## Main Files
 
-* `index.html` — Contains the complete portfolio content, including About, Skills, Experience, Projects, and Contact.
-* `style.css` — Contains all styling and responsive layouts for desktop, tablet, mobile, and small-screen devices.
-* `script.js` — Handles the boot animation, cursor, 3D tilt effect, typewriter effect, matrix background, and scroll animations.
+* `index.html` — All the content and sections of the portfolio, including About, Skills, Experience, Projects, Achievements, and Contact.
+* `style.css` — Handles the complete design, layout, animations, and responsive styling.
+* `script.js` — Handles the interactive parts of the website, including the boot screen, cursor, 3D tilt, typewriter effect, matrix background, and scroll animations.
 
 ## Before Deploying
 
-A few sections still need to be updated with personal project and coding-profile information.
+Most of the portfolio is already set up, but a few sections still need to be updated with my actual project and coding-profile details.
 
-### 1. Projects
+### Projects
 
-The three project cards in the Projects section are currently placeholders.
+The three project cards are currently marked as placeholders.
 
 Search `index.html` for:
 
@@ -45,17 +45,21 @@ PROJECT / 02
 PROJECT / 03
 ```
 
-Replace the placeholder title, description, technologies, GitHub repository, and live demo links with your actual projects.
+Replace them with my actual projects, including:
 
-After adding the real project information:
+* Project name
+* Short description
+* Technologies used
+* GitHub repository
+* Live project link
 
-* Remove the `placeholder` ribbon.
-* Remove the `is-placeholder` class.
-* Replace every `href="#"` with the correct GitHub or live project URL.
+After adding the real projects, remove the `placeholder` ribbon and the `is-placeholder` class.
 
-### 2. Coding Profile
+Also make sure all `href="#"` links are replaced with the correct URLs.
 
-The coding profile section currently contains an `add link` placeholder.
+### Coding Profile
+
+The coding profile section still contains an `add-link` placeholder.
 
 Search `index.html` for:
 
@@ -64,13 +68,11 @@ add-link
 Coding Profile
 ```
 
-Add your actual LeetCode, Codeforces, or GeeksforGeeks profile URL and remove the placeholder tag.
+Add the correct LeetCode, Codeforces, or GeeksforGeeks profile link and remove the placeholder.
 
-## What's Included
+## Achievements
 
-### Achievements Marquee
-
-The portfolio includes a continuously scrolling achievements section featuring event and award photographs.
+The portfolio has a continuously moving achievements section with photographs from events and academic achievements.
 
 Currently included:
 
@@ -78,13 +80,7 @@ Currently included:
 * JIT Stage Felicitation
 * TE Topper Award — CGPA 9.86
 
-The marquee:
-
-* Scrolls continuously.
-* Pauses when interacted with.
-* Works across desktop and mobile.
-* Adjusts its speed on smaller screens.
-* Respects `prefers-reduced-motion` for accessibility.
+The marquee is designed to work smoothly across different screen sizes. It also slows down on smaller screens and respects reduced-motion settings for users who prefer fewer animations.
 
 To add another achievement, place the image inside:
 
@@ -92,63 +88,65 @@ To add another achievement, place the image inside:
 assets/achievements/
 ```
 
-Then copy an existing `.ach-card` block in `index.html` and update the image, year, title, and description. The duplicated cards are required to keep the scrolling loop continuous.
+Then duplicate an existing `.ach-card` in `index.html` and update the image, year, title, and description.
+
+The duplicated cards are intentional because they keep the marquee moving continuously without a visible break.
 
 ## Resume
 
-The portfolio includes:
+My resume is available at:
 
 ```text
 assets/Umesh_Jadhav_Resume.pdf
 ```
 
-The resume is linked from both the navigation bar and hero section.
+It is linked from both the navigation bar and the hero section.
 
-If you want to replace it with an updated resume, keep the same filename or update the corresponding `href` values in `index.html`.
+Whenever I update my resume, I can simply replace the existing PDF while keeping the same filename. Otherwise, the `href` references in `index.html` need to be updated.
 
 ## Profile Photo
 
-The profile image is stored at:
+The profile photo is stored at:
 
 ```text
 assets/umesh-cutout.png
 ```
 
-It is used as a transparent cutout inside the glass-style 3D card.
+It is used as a transparent cutout inside the 3D glass-style profile card.
 
-For the best result, use a portrait image with the subject reaching close to the bottom edge.
+For the best result, the photo should have a clean background and a portrait composition where the subject extends close to the bottom of the image.
 
-If you replace the image, keep the same filename or update the `src` in `index.html`.
+If I replace the photo, I can keep the same filename or update the image path in `index.html`.
 
 ## Social Links
 
-The portfolio is already connected to the following profiles:
+The portfolio currently includes my main contact and social profiles:
 
 * Email: `umeshrajput24196@gmail.com`
 * GitHub: `https://github.com/DevUmeshh`
 * LinkedIn: `https://www.linkedin.com/in/umeshjadhav09`
 * Instagram: `https://www.instagram.com/umeshh.jadhav`
 
-## Animations and Interactions
+## Interactions and Animations
 
-The site includes several lightweight JavaScript interactions:
+The website includes several small interactions to make the portfolio feel more dynamic without adding unnecessary dependencies:
 
-* One-time boot animation
-* Custom cursor on compatible desktop devices
-* 3D profile-card tilt
-* Typewriter effect
-* Scroll-triggered section reveals
-* Matrix-style animated background
-* Continuous achievements marquee
-* Background animation pause when the browser tab is inactive
+* Boot animation when the site starts
+* Custom cursor on supported desktop devices
+* 3D tilt effect on the profile card
+* Typewriter animation
+* Scroll-based section reveals
+* Matrix-style background
+* Continuously scrolling achievements
+* Automatic pause of the background animation when the browser tab is inactive
 
-The boot animation is limited to once per browser session using `sessionStorage`. If storage is unavailable, the site continues to work normally.
+The boot animation only runs once during a browser session. `sessionStorage` is used for this, with a fallback so the website still works if browser storage is unavailable.
 
-The custom cursor only activates on devices that support a real mouse pointer. Touch devices continue using the normal system cursor.
+The custom cursor only appears on devices that support a mouse or similar pointer. On touch devices, the normal system cursor is used.
 
 ## Responsive Design
 
-The layout has been designed for different screen sizes, including:
+The portfolio has been designed and tested for different screen sizes, including:
 
 * 1440px
 * 1024px
@@ -156,22 +154,24 @@ The layout has been designed for different screen sizes, including:
 * 390px
 * 360px
 
-The site includes:
+The layout includes:
 
 * Responsive typography
 * Mobile navigation
 * Responsive project cards
-* Fluid spacing
+* Flexible spacing
 * Mobile-friendly achievement cards
-* No intentional horizontal overflow
+* No unnecessary horizontal scrolling
 
-The navigation switches to a hamburger menu below 820px.
+The navigation changes to a hamburger menu on screens below 820px.
 
 ## Run Locally
 
-No installation or build process is required.
+There is no installation or build process required.
 
-Open `index.html` directly in a browser, or use a local server:
+The simplest way is to open `index.html` directly in a browser.
+
+For a local server, run:
 
 ```bash
 cd portfolio
@@ -186,7 +186,7 @@ http://localhost:8000
 
 ## Deploy on Vercel
 
-### Option 1 — Vercel CLI
+### Using Vercel CLI
 
 Install the Vercel CLI:
 
@@ -201,17 +201,17 @@ cd portfolio
 vercel
 ```
 
-Follow the prompts for the first deployment.
+Follow the prompts to complete the first deployment.
 
-For production:
+For the production deployment:
 
 ```bash
 vercel --prod
 ```
 
-### Option 2 — GitHub + Vercel
+### Using GitHub and Vercel
 
-Initialize the repository:
+Create and push the repository:
 
 ```bash
 cd portfolio
@@ -223,31 +223,30 @@ git remote add origin https://github.com/DevUmeshh/portfolio.git
 git push -u origin main
 ```
 
-Then import the repository into Vercel.
+After that, import the repository into Vercel.
 
-Use:
+Since this is a static website, no framework or build command is required.
 
 ```text
 Framework Preset: Other
 Build Command: None
 ```
 
-Since this is a static website, no build process is required.
+Once deployed, Vercel provides a `vercel.app` URL. A custom domain can also be connected later through the project settings.
 
-After deployment, Vercel will provide a live `vercel.app` URL. A custom domain can also be connected later from the project settings.
+## Before Sharing
 
-## Final Checklist
+Before I share the portfolio publicly, I should make sure that:
 
-Before sharing the portfolio publicly, make sure to:
+* [ ] All three placeholder projects have been replaced.
+* [ ] Every project has the correct GitHub repository link.
+* [ ] Live demo links are added wherever available.
+* [ ] My coding profile link is added.
+* [ ] The resume is the latest version.
+* [ ] All social links are working.
+* [ ] Navigation works correctly.
+* [ ] The portfolio looks good on both desktop and mobile.
+* [ ] All achievement images load properly.
+* [ ] The resume and project links open correctly.
 
-* [ ] Replace all three placeholder projects.
-* [ ] Add GitHub and live demo links for each project.
-* [ ] Add the correct coding profile link.
-* [ ] Check that the resume is up to date.
-* [ ] Verify all social links.
-* [ ] Check the portfolio on both desktop and mobile.
-* [ ] Test every navigation link.
-* [ ] Test every project and resume link.
-* [ ] Confirm that all achievement images load correctly.
-
-Once these placeholders are replaced, the portfolio is ready to deploy and share.
+Once these remaining placeholders are updated, the portfolio is ready to deploy and share.
