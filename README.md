@@ -1,95 +1,218 @@
 # Umesh Jadhav — Portfolio
 
-A static, dependency-free portfolio site (plain HTML/CSS/JS — no build step) featuring a black terminal theme, a 3D-tilting photo card, animated boot sequence, matrix-style background, and scroll-triggered reveals.
+A static, dependency-free portfolio website built using plain HTML, CSS, and JavaScript. No build tools or frameworks are required.
 
-## File structure
+The portfolio uses a black terminal-inspired design with a 3D photo card, animated boot sequence, matrix-style background, typewriter effects, and scroll-based animations.
 
-```
+## Project Structure
+
+```text
 portfolio/
-├── index.html          → all page content (about, stack, experience, projects, contact)
-├── style.css            → all styling (fully responsive: desktop / tablet / mobile / small mobile)
-├── script.js            → boot animation, cursor, 3D tilt, typewriter, scroll reveals
+├── index.html
+├── style.css
+├── script.js
 ├── assets/
-│   ├── umesh-cutout.png       → background-removed profile photo, floating in a glass 3D card
-│   ├── Umesh_Jadhav_Resume.pdf → auto-generated one-page resume from your LinkedIn data
-│   ├── favicon.png             → browser tab icon
-│   ├── apple-touch-icon.png    → iOS home-screen icon
-│   └── achievements/           → the 3 event/award photos used in the marquee (ach-1.jpg, ach-2.jpg, ach-3.jpg)
+│   ├── umesh-cutout.png
+│   ├── Umesh_Jadhav_Resume.pdf
+│   ├── favicon.png
+│   ├── apple-touch-icon.png
+│   └── achievements/
+│       ├── ach-1.jpg
+│       ├── ach-2.jpg
+│       └── ach-3.jpg
 └── README.md
 ```
 
-## ⚠ Things marked "placeholder" — fix these before sending this to anyone
+### Main Files
 
-Search `index.html` for these markers and swap in real content:
+* `index.html` — Contains the complete portfolio content, including About, Skills, Experience, Projects, and Contact.
+* `style.css` — Contains all styling and responsive layouts for desktop, tablet, mobile, and small-screen devices.
+* `script.js` — Handles the boot animation, cursor, 3D tilt effect, typewriter effect, matrix background, and scroll animations.
 
-| What | Where | Marker |
-|---|---|---|
-| 3 sample projects | Projects section | Cards labeled `PLACEHOLDER` in the top-right corner |
-| Coding profile link (LeetCode/Codeforces/GFG) | Hero social row + About facts | `add link` tag |
-| Project repo/live links | Each project card's `Live ↗` / `Code ↗` | currently `href="#"` |
+## Before Deploying
 
-Everything else (name, contact info, socials, experience, education, certifications, tech stack) came straight from your uploaded LinkedIn PDF and is real.
+A few sections still need to be updated with personal project and coding-profile information.
 
-## What's new in this version
+### 1. Projects
 
-- **Achievements marquee** — a continuously scrolling row of your real event/award photos (Induction Programme, JIT stage felicitation, TE Topper award — CGPA 9.86), each with a caption. Pauses on hover (desktop) or tap (mobile). Fully responsive: cards resize fluidly, animation speeds down on small screens, and it respects `prefers-reduced-motion` for accessibility.
-- **Resume button** — top nav and hero both link to `assets/Umesh_Jadhav_Resume.pdf`, a real one-page resume auto-built from your LinkedIn data (not a placeholder — open it, it's ready to send as-is, or replace the PDF with your own).
-- **Featured case study** — the Experience section now includes a Problem → Approach → Result breakdown of your Sumago DevOps work, using your actual resume bullets reframed as a build story (real, not invented).
-- **Placeholder markers** — anything not backed by real data (projects, coding profile) is visibly flagged in the UI itself, not just in this README, so it's obvious what still needs your input before this goes live.
-- **Faster, one-time boot animation** — cut from ~4s to under 1.5s, and it only plays once per browser session (stored via `sessionStorage`, with a safe fallback if storage is blocked).
-- **Resilient custom cursor** — only activates via JavaScript on devices with a real mouse (`hover: hover` + `pointer: fine`); touch devices and any JS failure fall back to the normal cursor instead of losing it.
-- **Favicon + Open Graph tags** — the tab icon and link-preview image (for sharing on LinkedIn/WhatsApp) are set up.
-- **Background-pauses canvas** — the animated matrix background stops running when the tab isn't visible, so it's not burning CPU/battery in a background tab.
+The three project cards in the Projects section are currently placeholders.
 
-## Before you deploy — edit these
+Search `index.html` for:
 
-1. **Projects** (`index.html`, search for `PROJECT / 01`, `PROJECT / 02`, `PROJECT / 03`)
-   These are placeholders — replace the title, description, tags, and swap the `#` in `proj-links` with your real GitHub repo and live demo URLs. Once you add a real project, remove its `<span class="ph-ribbon">placeholder</span>` line and the `is-placeholder` class.
+```text
+PROJECT / 01
+PROJECT / 02
+PROJECT / 03
+```
 
-2. **Coding profile** — search for `add-link` / "Coding Profile" in `index.html` (hero social row and About facts) and replace the `#` with your real LeetCode/Codeforces/GFG URL, then remove the `ph-tag` span.
+Replace the placeholder title, description, technologies, GitHub repository, and live demo links with your actual projects.
 
-3. **Resume** — `assets/Umesh_Jadhav_Resume.pdf` is a real, ready-to-send resume generated from your LinkedIn data. Replace it with your own PDF any time — just keep the same filename, or update the two `href` references in `index.html`.
+After adding the real project information:
 
-4. **Photo** — `assets/umesh-cutout.png` has the background removed and is composited with a soft drop shadow so it floats above the glass panel. To swap it for a new photo:
-   - Use any background-remover (remove.bg, Photoshop, or `rembg` locally) to get a transparent-background PNG
-   - Keep the same filename or update the `src` in `index.html`
-   - A portrait crop with the subject reaching the bottom edge works best.
+* Remove the `placeholder` ribbon.
+* Remove the `is-placeholder` class.
+* Replace every `href="#"` with the correct GitHub or live project URL.
 
-5. **Achievements photos** — to add a 4th/5th event photo, drop it in `assets/achievements/`, then in `index.html` copy one `.ach-card` block (both the "real" one and its `aria-hidden="true"` duplicate further down — the duplicate set is what makes the loop seamless) and update the image `src`, `alt`, `.ach-year`, and `.ach-title`.
+### 2. Coding Profile
 
-5. **Socials** — already wired to:
-   - Email: `umeshrajput24196@gmail.com`
-   - GitHub: `https://github.com/DevUmeshh`
-   - LinkedIn: `https://www.linkedin.com/in/umeshjadhav09`
-   - Instagram: `https://www.instagram.com/umeshh.jadhav`
+The coding profile section currently contains an `add link` placeholder.
 
-3. **Socials** — already wired to:
-   - Email: `umeshrajput24196@gmail.com`
-   - GitHub: `https://github.com/DevUmeshh`
-   - LinkedIn: `https://www.linkedin.com/in/umeshjadhav09`
-   - Instagram: `https://www.instagram.com/umeshh.jadhav`
+Search `index.html` for:
 
-## Run it locally
+```text
+add-link
+Coding Profile
+```
 
-No build tools needed. Just open `index.html` in a browser, or serve it:
+Add your actual LeetCode, Codeforces, or GeeksforGeeks profile URL and remove the placeholder tag.
+
+## What's Included
+
+### Achievements Marquee
+
+The portfolio includes a continuously scrolling achievements section featuring event and award photographs.
+
+Currently included:
+
+* Induction Programme
+* JIT Stage Felicitation
+* TE Topper Award — CGPA 9.86
+
+The marquee:
+
+* Scrolls continuously.
+* Pauses when interacted with.
+* Works across desktop and mobile.
+* Adjusts its speed on smaller screens.
+* Respects `prefers-reduced-motion` for accessibility.
+
+To add another achievement, place the image inside:
+
+```text
+assets/achievements/
+```
+
+Then copy an existing `.ach-card` block in `index.html` and update the image, year, title, and description. The duplicated cards are required to keep the scrolling loop continuous.
+
+## Resume
+
+The portfolio includes:
+
+```text
+assets/Umesh_Jadhav_Resume.pdf
+```
+
+The resume is linked from both the navigation bar and hero section.
+
+If you want to replace it with an updated resume, keep the same filename or update the corresponding `href` values in `index.html`.
+
+## Profile Photo
+
+The profile image is stored at:
+
+```text
+assets/umesh-cutout.png
+```
+
+It is used as a transparent cutout inside the glass-style 3D card.
+
+For the best result, use a portrait image with the subject reaching close to the bottom edge.
+
+If you replace the image, keep the same filename or update the `src` in `index.html`.
+
+## Social Links
+
+The portfolio is already connected to the following profiles:
+
+* Email: `umeshrajput24196@gmail.com`
+* GitHub: `https://github.com/DevUmeshh`
+* LinkedIn: `https://www.linkedin.com/in/umeshjadhav09`
+* Instagram: `https://www.instagram.com/umeshh.jadhav`
+
+## Animations and Interactions
+
+The site includes several lightweight JavaScript interactions:
+
+* One-time boot animation
+* Custom cursor on compatible desktop devices
+* 3D profile-card tilt
+* Typewriter effect
+* Scroll-triggered section reveals
+* Matrix-style animated background
+* Continuous achievements marquee
+* Background animation pause when the browser tab is inactive
+
+The boot animation is limited to once per browser session using `sessionStorage`. If storage is unavailable, the site continues to work normally.
+
+The custom cursor only activates on devices that support a real mouse pointer. Touch devices continue using the normal system cursor.
+
+## Responsive Design
+
+The layout has been designed for different screen sizes, including:
+
+* 1440px
+* 1024px
+* 768px
+* 390px
+* 360px
+
+The site includes:
+
+* Responsive typography
+* Mobile navigation
+* Responsive project cards
+* Fluid spacing
+* Mobile-friendly achievement cards
+* No intentional horizontal overflow
+
+The navigation switches to a hamburger menu below 820px.
+
+## Run Locally
+
+No installation or build process is required.
+
+Open `index.html` directly in a browser, or use a local server:
 
 ```bash
 cd portfolio
 python3 -m http.server 8000
-# visit http://localhost:8000
 ```
 
-## Deploy to Vercel
+Then open:
 
-**Option A — Vercel CLI (fastest)**
+```text
+http://localhost:8000
+```
+
+## Deploy on Vercel
+
+### Option 1 — Vercel CLI
+
+Install the Vercel CLI:
+
 ```bash
 npm i -g vercel
-cd portfolio
-vercel          # first deploy, follow the prompts
-vercel --prod   # promote to production URL
 ```
 
-**Option B — GitHub + Vercel dashboard**
+Then:
+
+```bash
+cd portfolio
+vercel
+```
+
+Follow the prompts for the first deployment.
+
+For production:
+
+```bash
+vercel --prod
+```
+
+### Option 2 — GitHub + Vercel
+
+Initialize the repository:
+
 ```bash
 cd portfolio
 git init
@@ -99,18 +222,32 @@ git branch -M main
 git remote add origin https://github.com/DevUmeshh/portfolio.git
 git push -u origin main
 ```
-Then:
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import the `portfolio` repo from GitHub
-3. Framework preset: **Other** (it's static, no build command needed)
-4. Click **Deploy**
 
-Vercel gives you a live `*.vercel.app` URL immediately, and you can attach a custom domain later from the project's Settings → Domains tab.
+Then import the repository into Vercel.
 
-## Notes
+Use:
 
-- No `npm install` or build step required — Vercel serves the static files directly.
-- **Responsive:** tested and tuned at 1440px, 1024px, 768px, 390px, and 360px wide — no horizontal overflow at any size, hamburger nav under 820px, 2-column then 1-column project grid, fluid type sizing throughout.
-- **Photo:** background removed and recomposited as a floating cutout with a soft shadow, sitting in a glass-panel card with a green/violet glow and a whitish translucent border — no circle crop. Sourced from your original 1254×1254px photo at full resolution.
-- **Resume:** generated from the LinkedIn PDF you uploaded — real data, not placeholder text. Swap the file any time you update it.
-- The three listed projects and the coding-profile link are the only placeholder content left — everything else on the page is your real information.
+```text
+Framework Preset: Other
+Build Command: None
+```
+
+Since this is a static website, no build process is required.
+
+After deployment, Vercel will provide a live `vercel.app` URL. A custom domain can also be connected later from the project settings.
+
+## Final Checklist
+
+Before sharing the portfolio publicly, make sure to:
+
+* [ ] Replace all three placeholder projects.
+* [ ] Add GitHub and live demo links for each project.
+* [ ] Add the correct coding profile link.
+* [ ] Check that the resume is up to date.
+* [ ] Verify all social links.
+* [ ] Check the portfolio on both desktop and mobile.
+* [ ] Test every navigation link.
+* [ ] Test every project and resume link.
+* [ ] Confirm that all achievement images load correctly.
+
+Once these placeholders are replaced, the portfolio is ready to deploy and share.
