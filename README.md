@@ -1,77 +1,41 @@
 # Umesh Jadhav — Portfolio
 
-A static, dependency-free portfolio site (plain HTML/CSS/JS — no build step) featuring a black terminal theme, a 3D-tilting photo card, animated boot sequence, matrix-style background, and scroll-triggered reveals.
+A static, dependency-free portfolio (plain HTML/CSS/JS, no build step) with a light/dark theme toggle and an editorial, content-first design — no terminal chrome, no stock icon sets, no filler animation.
 
 ## File structure
 
 ```
 portfolio/
-├── index.html          → all page content (about, stack, experience, projects, contact)
-├── style.css            → all styling (fully responsive: desktop / tablet / mobile / small mobile)
-├── script.js            → boot animation, cursor, 3D tilt, typewriter, scroll reveals
-├── assets/
-│   ├── umesh-cutout.png       → background-removed profile photo, floating in a glass 3D card
-│   ├── Umesh_Jadhav_Resume.pdf → auto-generated one-page resume from your LinkedIn data
-│   ├── favicon.png             → browser tab icon
-│   ├── apple-touch-icon.png    → iOS home-screen icon
-│   └── achievements/           → the 3 event/award photos used in the marquee (ach-1.jpg, ach-2.jpg, ach-3.jpg)
-└── README.md
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── assets/
+    ├── umesh-cutout.png           → hero photo, background removed
+    ├── Umesh_Jadhav_Resume.pdf    → real one-page resume, ready to send
+    ├── favicon.png / apple-touch-icon.png
+    └── achievements/
+        ├── ach-1.jpg  (JIT stage felicitation)
+        ├── ach-2.jpg  (Induction Programme 2024–25)
+        └── ach-3.jpg  (TE Topper, CGPA 9.86)
 ```
 
-## ⚠ Things marked "placeholder" — fix these before sending this to anyone
+## What's in this version
 
-Search `index.html` for these markers and swap in real content:
+- **Light + dark theme**, toggled from the nav (sun/moon icon, top right). Defaults to the visitor's system preference, remembers their choice after that via `localStorage` (safely no-ops if storage is blocked, so it never breaks).
+- **Real projects only** — JalRakshya (hackathon project, live at jal-rakshya.vercel.app) and RCAgen (built at Arrow Technologies and Solutions), both with real descriptions and tech stacks. No filler cards.
+- **Achievements** — your 3 event photos in a simple static grid with a gentle hover lift. No auto-scrolling, no duplicated images.
+- **One consistent animation language** — sections fade up gently as you scroll to them, achievement photos lift slightly on hover, that's it. Nothing else moves on its own.
+- Typography pairs **Bricolage Grotesque** (headlines) with **Inter** (body/UI) — deliberately not the cream-background/serif/terracotta or black-background/neon-green looks that most AI-generated portfolios default to.
 
-| What | Where | Marker |
-|---|---|---|
-| 3 sample projects | Projects section | Cards labeled `PLACEHOLDER` in the top-right corner |
-| Coding profile link (LeetCode/Codeforces/GFG) | Hero social row + About facts | `add link` tag |
-| Project repo/live links | Each project card's `Live ↗` / `Code ↗` | currently `href="#"` |
+## Before you deploy
 
-Everything else (name, contact info, socials, experience, education, certifications, tech stack) came straight from your uploaded LinkedIn PDF and is real.
-
-## What's new in this version
-
-- **Achievements marquee** — a continuously scrolling row of your real event/award photos (Induction Programme, JIT stage felicitation, TE Topper award — CGPA 9.86), each with a caption. Pauses on hover (desktop) or tap (mobile). Fully responsive: cards resize fluidly, animation speeds down on small screens, and it respects `prefers-reduced-motion` for accessibility.
-- **Resume button** — top nav and hero both link to `assets/Umesh_Jadhav_Resume.pdf`, a real one-page resume auto-built from your LinkedIn data (not a placeholder — open it, it's ready to send as-is, or replace the PDF with your own).
-- **Featured case study** — the Experience section now includes a Problem → Approach → Result breakdown of your Sumago DevOps work, using your actual resume bullets reframed as a build story (real, not invented).
-- **Placeholder markers** — anything not backed by real data (projects, coding profile) is visibly flagged in the UI itself, not just in this README, so it's obvious what still needs your input before this goes live.
-- **Faster, one-time boot animation** — cut from ~4s to under 1.5s, and it only plays once per browser session (stored via `sessionStorage`, with a safe fallback if storage is blocked).
-- **Resilient custom cursor** — only activates via JavaScript on devices with a real mouse (`hover: hover` + `pointer: fine`); touch devices and any JS failure fall back to the normal cursor instead of losing it.
-- **Favicon + Open Graph tags** — the tab icon and link-preview image (for sharing on LinkedIn/WhatsApp) are set up.
-- **Background-pauses canvas** — the animated matrix background stops running when the tab isn't visible, so it's not burning CPU/battery in a background tab.
-
-## Before you deploy — edit these
-
-1. **Projects** (`index.html`, search for `PROJECT / 01`, `PROJECT / 02`, `PROJECT / 03`)
-   These are placeholders — replace the title, description, tags, and swap the `#` in `proj-links` with your real GitHub repo and live demo URLs. Once you add a real project, remove its `<span class="ph-ribbon">placeholder</span>` line and the `is-placeholder` class.
-
-2. **Coding profile** — search for `add-link` / "Coding Profile" in `index.html` (hero social row and About facts) and replace the `#` with your real LeetCode/Codeforces/GFG URL, then remove the `ph-tag` span.
-
-3. **Resume** — `assets/Umesh_Jadhav_Resume.pdf` is a real, ready-to-send resume generated from your LinkedIn data. Replace it with your own PDF any time — just keep the same filename, or update the two `href` references in `index.html`.
-
-4. **Photo** — `assets/umesh-cutout.png` has the background removed and is composited with a soft drop shadow so it floats above the glass panel. To swap it for a new photo:
-   - Use any background-remover (remove.bg, Photoshop, or `rembg` locally) to get a transparent-background PNG
-   - Keep the same filename or update the `src` in `index.html`
-   - A portrait crop with the subject reaching the bottom edge works best.
-
-5. **Achievements photos** — to add a 4th/5th event photo, drop it in `assets/achievements/`, then in `index.html` copy one `.ach-card` block (both the "real" one and its `aria-hidden="true"` duplicate further down — the duplicate set is what makes the loop seamless) and update the image `src`, `alt`, `.ach-year`, and `.ach-title`.
-
-5. **Socials** — already wired to:
-   - Email: `umeshrajput24196@gmail.com`
-   - GitHub: `https://github.com/DevUmeshh`
-   - LinkedIn: `https://www.linkedin.com/in/umeshjadhav09`
-   - Instagram: `https://www.instagram.com/umeshh.jadhav`
-
-3. **Socials** — already wired to:
-   - Email: `umeshrajput24196@gmail.com`
-   - GitHub: `https://github.com/DevUmeshh`
-   - LinkedIn: `https://www.linkedin.com/in/umeshjadhav09`
-   - Instagram: `https://www.instagram.com/umeshh.jadhav`
+1. **Photo** — `assets/umesh-cutout.png` already has the background removed. Swap it for an updated one any time; keep the same filename or update the `src` in `index.html`.
+2. **Resume** — `assets/Umesh_Jadhav_Resume.pdf` is real and ready to send. Replace it whenever you update your resume, same filename.
+3. **Projects** — when you have more projects, copy one `<article class="project">` block in `index.html` and fill in the title, dates, description, tech list, and (if it's live) a link button.
+4. **Achievements** — to add a 4th photo, copy one `<figure class="achieve-item">` block and drop the new image into `assets/achievements/`.
 
 ## Run it locally
-
-No build tools needed. Just open `index.html` in a browser, or serve it:
 
 ```bash
 cd portfolio
@@ -79,38 +43,25 @@ python3 -m http.server 8000
 # visit http://localhost:8000
 ```
 
-## Deploy to Vercel
+Or just double-click `index.html` — it's plain HTML/CSS/JS, no server required.
 
-**Option A — Vercel CLI (fastest)**
+## Deploy
+
+**Vercel (recommended)**
 ```bash
 npm i -g vercel
 cd portfolio
-vercel          # first deploy, follow the prompts
-vercel --prod   # promote to production URL
+vercel --prod
 ```
+Or skip the CLI entirely: unzip this folder and drag it into [vercel.com/new](https://vercel.com/new) or [app.netlify.com/drop](https://app.netlify.com/drop) — either gives you a live URL in seconds, no config needed since it's static.
 
-**Option B — GitHub + Vercel dashboard**
+**Push to GitHub first (optional, recommended for long-term use)**
 ```bash
-cd portfolio
 git init
 git add .
-git commit -m "Initial portfolio"
+git commit -m "portfolio"
 git branch -M main
-git remote add origin https://github.com/DevUmeshh/portfolio.git
+git remote add origin https://github.com/DevUmeshh/umesh-portfolio.git
 git push -u origin main
 ```
-Then:
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import the `portfolio` repo from GitHub
-3. Framework preset: **Other** (it's static, no build command needed)
-4. Click **Deploy**
-
-Vercel gives you a live `*.vercel.app` URL immediately, and you can attach a custom domain later from the project's Settings → Domains tab.
-
-## Notes
-
-- No `npm install` or build step required — Vercel serves the static files directly.
-- **Responsive:** tested and tuned at 1440px, 1024px, 768px, 390px, and 360px wide — no horizontal overflow at any size, hamburger nav under 820px, 2-column then 1-column project grid, fluid type sizing throughout.
-- **Photo:** background removed and recomposited as a floating cutout with a soft shadow, sitting in a glass-panel card with a green/violet glow and a whitish translucent border — no circle crop. Sourced from your original 1254×1254px photo at full resolution.
-- **Resume:** generated from the LinkedIn PDF you uploaded — real data, not placeholder text. Swap the file any time you update it.
-- The three listed projects and the coding-profile link are the only placeholder content left — everything else on the page is your real information.
+Then import that repo at [vercel.com/new](https://vercel.com/new) — every future push auto-deploys.
