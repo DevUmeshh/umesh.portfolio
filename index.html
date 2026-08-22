@@ -16,30 +16,34 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<nav id="siteNav">
+  <div class="scroll-progress" id="scrollProgress"></div>
   <div class="wrap navbar">
-    <a href="#top" class="brand">Umesh Jadhav</a>
+    <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span>Umesh Jadhav</a>
 
     <button class="navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <div class="navlinks" id="navlinks">
-      <a href="#about">About</a>
-      <a href="#stack">Stack</a>
-      <a href="#experience">Experience</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#work">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="assets/Umesh_Jadhav_Resume.pdf" class="resume-pill" download>
-        Resume
+      <a href="#about" data-nav>About</a>
+      <a href="#stack" data-nav>Stack</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#achievements" data-nav>Achievements</a>
+      <a href="#work" data-nav>Projects</a>
+      <a href="#contact" data-nav>Contact</a>
+      <a href="assets/Umesh_Jadhav_Resume.pdf" class="resume-pill magnetic" download>
+        <span>Resume</span>
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M6 11l6 6 6-6M5 21h14"/></svg>
       </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
@@ -54,15 +58,22 @@
 
   <!-- HERO -->
   <header class="hero" id="top">
+    <div class="hero-field" aria-hidden="true">
+      <span class="field-line l1"></span>
+      <span class="field-line l2"></span>
+      <span class="field-dot d1"></span>
+      <span class="field-dot d2"></span>
+      <span class="field-dot d3"></span>
+    </div>
     <div class="wrap hero-grid">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Software Engineer — Nashik, India</p>
-        <h1 class="hero-name">Umesh<br>Jadhav</h1>
-        <p class="hero-role">AWS Cloud &amp; DevOps · Full-Stack Development · DSA in C++</p>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Software Engineer — Nashik, India</p>
+        <h1 class="hero-name" data-split>Umesh<br>Jadhav</h1>
+        <p class="hero-role">AWS Cloud &amp; DevOps · Full&#8209;Stack Development · DSA in C++</p>
         <p class="hero-bio">Final-year B.E. student in AI &amp; Data Science, building my way from strong fundamentals to real products. I enjoy turning ideas into working software and learning by shipping.</p>
         <div class="hero-cta">
-          <a href="#work" class="btn btn-solid">See my work</a>
-          <a href="assets/Umesh_Jadhav_Resume.pdf" class="btn btn-line" download>Download résumé</a>
+          <a href="#work" class="btn btn-solid magnetic"><span>See my work</span></a>
+          <a href="assets/Umesh_Jadhav_Resume.pdf" class="btn btn-line magnetic" download><span>Download résumé</span></a>
         </div>
         <div class="hero-links">
           <a href="https://github.com/DevUmeshh" target="_blank" rel="noopener">GitHub</a>
@@ -72,15 +83,27 @@
         </div>
       </div>
 
-      <div class="hero-portrait reveal">
-        <svg class="contour" width="520" height="560" viewBox="0 0 520 560" fill="none">
-          <path d="M10 380 C 90 320, 130 460, 220 400 S 340 300, 430 360 S 500 460, 510 420" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
-          <path d="M0 300 C 80 260, 150 380, 250 320 S 380 230, 470 300 S 520 380, 520 340" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
-          <path d="M20 460 C 110 410, 170 520, 260 470 S 400 390, 500 450" stroke="currentColor" stroke-width="1.2" opacity="0.28"/>
+      <div class="hero-portrait">
+        <div class="portrait-aurora" aria-hidden="true"></div>
+        <svg class="orbit-ring" width="440" height="440" viewBox="0 0 440 440" fill="none" aria-hidden="true">
+          <circle cx="220" cy="220" r="208" stroke="currentColor" stroke-width="1" stroke-dasharray="1 9" stroke-linecap="round"/>
         </svg>
+        <svg class="orbit-ring orbit-ring-2" width="480" height="480" viewBox="0 0 480 480" fill="none" aria-hidden="true">
+          <circle cx="240" cy="240" r="236" stroke="currentColor" stroke-width="1" stroke-dasharray="0.5 14" stroke-linecap="round"/>
+        </svg>
+
         <div class="portrait-frame">
           <img src="assets/umesh-cutout.png" alt="Umesh Jadhav" width="820" height="994">
         </div>
+
+        <div class="skill-orbit" aria-hidden="true">
+          <span class="skill-chip sc-1">AWS</span>
+          <span class="skill-chip sc-2">React</span>
+          <span class="skill-chip sc-3">Node.js</span>
+          <span class="skill-chip sc-4">C++</span>
+          <span class="skill-chip sc-5">Docker</span>
+        </div>
+
         <p class="portrait-caption">Open to SDE &amp; Cloud internships and full-time roles</p>
       </div>
     </div>
@@ -89,7 +112,7 @@
   <!-- ABOUT -->
   <section class="sec" id="about">
     <div class="wrap">
-      <p class="eyebrow reveal">About</p>
+      <p class="eyebrow reveal"><span class="eyebrow-index">01</span>About</p>
       <div class="about-grid">
         <p class="about-bio reveal">I'm a final-year B.E. student in Artificial Intelligence &amp; Data Science at Savitribai Phule Pune University. My focus right now is DSA in C++ for strong problem-solving fundamentals, alongside building full-stack SaaS projects and hands-on AWS &amp; Cloud experience. I like turning half-formed ideas into things that actually run in production.</p>
 
@@ -113,18 +136,18 @@
   <!-- STACK -->
   <section class="sec" id="stack">
     <div class="wrap">
-      <p class="eyebrow reveal">Tech stack</p>
+      <p class="eyebrow reveal"><span class="eyebrow-index">02</span>Tech stack</p>
       <div class="stack-list reveal">
-        <div class="stack-row">
-          <h3>Full-Stack Development</h3>
+        <div class="stack-row spot">
+          <h3><span class="stack-glyph" aria-hidden="true"></span>Full-Stack Development</h3>
           <p>JavaScript · React · Node.js · Express · REST APIs · HTML &amp; CSS</p>
         </div>
-        <div class="stack-row">
-          <h3>Cloud &amp; DevOps</h3>
+        <div class="stack-row spot">
+          <h3><span class="stack-glyph" aria-hidden="true"></span>Cloud &amp; DevOps</h3>
           <p>AWS EC2 · AWS S3 · AWS IAM · CI/CD Pipelines · Docker · Git &amp; GitHub · Linux · Bash</p>
         </div>
-        <div class="stack-row">
-          <h3>Core CS &amp; Data</h3>
+        <div class="stack-row spot">
+          <h3><span class="stack-glyph" aria-hidden="true"></span>Core CS &amp; Data</h3>
           <p>C++ (DSA) · Python · SQL</p>
         </div>
       </div>
@@ -134,7 +157,7 @@
   <!-- EXPERIENCE -->
   <section class="sec" id="experience">
     <div class="wrap">
-      <p class="eyebrow reveal">Experience</p>
+      <p class="eyebrow reveal"><span class="eyebrow-index">03</span>Experience</p>
 
       <div class="timeline reveal">
         <div class="tl-row">
@@ -173,18 +196,27 @@
   <!-- ACHIEVEMENTS -->
   <section class="sec" id="achievements">
     <div class="wrap">
-      <p class="eyebrow reveal">Achievements</p>
+      <p class="eyebrow reveal"><span class="eyebrow-index">04</span>Achievements</p>
       <div class="achieve-grid">
-        <figure class="achieve-item reveal">
-          <img src="assets/achievements/ach-2.jpg" alt="Umesh Jadhav receiving a certificate at the First Year Induction Programme" loading="lazy">
+        <figure class="achieve-item reveal spot">
+          <div class="achieve-media">
+            <img src="assets/achievements/ach-2.jpg" alt="Umesh Jadhav receiving a certificate at the First Year Induction Programme" loading="lazy">
+            <span class="shine" aria-hidden="true"></span>
+          </div>
           <figcaption><span class="ach-when">1st Year, 2024</span>Induction Programme, Batch 2024–25</figcaption>
         </figure>
-        <figure class="achieve-item reveal">
-          <img src="assets/achievements/ach-1.jpg" alt="Umesh Jadhav felicitated on stage at JIT Nashik's annual event" loading="lazy">
+        <figure class="achieve-item reveal spot">
+          <div class="achieve-media">
+            <img src="assets/achievements/ach-1.jpg" alt="Umesh Jadhav felicitated on stage at JIT Nashik's annual event" loading="lazy">
+            <span class="shine" aria-hidden="true"></span>
+          </div>
           <figcaption><span class="ach-when">JIT Nashik</span>Felicitated on stage, annual event</figcaption>
         </figure>
-        <figure class="achieve-item reveal">
-          <img src="assets/achievements/ach-3.jpg" alt="Umesh Jadhav awarded TE Topper medal with CGPA 9.86" loading="lazy">
+        <figure class="achieve-item reveal spot">
+          <div class="achieve-media">
+            <img src="assets/achievements/ach-3.jpg" alt="Umesh Jadhav awarded TE Topper medal with CGPA 9.86" loading="lazy">
+            <span class="shine" aria-hidden="true"></span>
+          </div>
           <figcaption><span class="ach-when">3rd Year, 2026</span>TE Topper — CGPA 9.86, AY 2025–26</figcaption>
         </figure>
       </div>
@@ -192,70 +224,107 @@
   </section>
 
   <!-- PROJECTS -->
-  <section class="sec" id="work">
+  <section class="sec sec-projects" id="work">
     <div class="wrap">
-      <p class="eyebrow reveal">Selected projects</p>
+      <p class="eyebrow reveal"><span class="eyebrow-index">05</span>Selected projects</p>
+      <p class="sec-lede reveal">Two things I've built end to end — a full-stack monitoring platform and a serverless automation tool on AWS.</p>
 
-      <article class="project reveal">
-        <div class="project-head">
-          <div>
-            <h3>JalRakshya</h3>
-            <p class="project-sub">Intelligent Groundwater Monitoring &amp; Decision Support System</p>
+      <div class="project-list">
+        <article class="project reveal spot" style="--p-a:var(--accent);--p-b:var(--accent-2);">
+          <div class="project-visual">
+            <div class="project-window">
+              <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
+              <span class="wlabel">jalrakshya · live</span>
+            </div>
+            <div class="project-monogram">JR</div>
           </div>
-          <div class="project-meta">
-            <span class="project-when">Mar 2026 – Present</span>
-            <span class="project-tag">Hackathon project</span>
+          <div class="project-content">
+            <div class="project-head">
+              <div>
+                <h3>JalRakshya</h3>
+                <p class="project-sub">Intelligent Groundwater Monitoring &amp; Decision Support System</p>
+              </div>
+              <div class="project-meta">
+                <span class="project-when">Mar 2026 – Present</span>
+                <span class="project-tag">Hackathon project</span>
+              </div>
+            </div>
+            <ul class="project-points">
+              <li>Developed a full-stack groundwater monitoring system using React.js, Node.js, Express.js, and MongoDB.</li>
+              <li>Built interactive dashboards with Google Maps, Chart.js, and real-time groundwater analytics.</li>
+              <li>Implemented water health scoring, smart alerts, and future groundwater level prediction.</li>
+              <li>Designed a responsive UI with Tailwind CSS and integrated REST APIs for data visualization and reporting.</li>
+            </ul>
+            <div class="project-foot">
+              <div class="tool-chips">
+                <span class="tool-chip">React.js</span>
+                <span class="tool-chip">Node.js</span>
+                <span class="tool-chip">Express.js</span>
+                <span class="tool-chip">MongoDB</span>
+                <span class="tool-chip">Tailwind CSS</span>
+                <span class="tool-chip">Chart.js</span>
+                <span class="tool-chip">Google Maps API</span>
+              </div>
+              <a href="https://jal-rakshya.vercel.app/" target="_blank" rel="noopener" class="btn btn-line btn-small magnetic">
+                <span>View live</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
           </div>
-        </div>
-        <ul class="project-points">
-          <li>Developed a full-stack groundwater monitoring system using React.js, Node.js, Express.js, and MongoDB.</li>
-          <li>Built interactive dashboards with Google Maps, Chart.js, and real-time groundwater analytics.</li>
-          <li>Implemented water health scoring, smart alerts, and future groundwater level prediction.</li>
-          <li>Designed a responsive UI with Tailwind CSS and integrated REST APIs for data visualization and reporting.</li>
-        </ul>
-        <div class="project-foot">
-          <p class="project-tools">React.js · Node.js · Express.js · MongoDB · Tailwind CSS · Chart.js · Google Maps API</p>
-          <a href="https://jal-rakshya.vercel.app/" target="_blank" rel="noopener" class="btn btn-line btn-small">
-            View live
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-        </div>
-      </article>
+        </article>
 
-      <article class="project reveal">
-        <div class="project-head">
-          <div>
-            <h3>RCAgen</h3>
-            <p class="project-sub">Automated Root Cause Analysis for AWS Cloud Failures</p>
+        <article class="project reveal spot" style="--p-a:var(--accent-2);--p-b:var(--accent);">
+          <div class="project-visual">
+            <div class="project-window">
+              <span class="wdot"></span><span class="wdot"></span><span class="wdot"></span>
+              <span class="wlabel">rcagen · serverless</span>
+            </div>
+            <div class="project-monogram">RC</div>
           </div>
-          <div class="project-meta">
-            <span class="project-when">Mar 2026 – May 2026</span>
-            <span class="project-tag">Arrow Technologies and Solutions</span>
+          <div class="project-content">
+            <div class="project-head">
+              <div>
+                <h3>RCAgen</h3>
+                <p class="project-sub">Automated Root Cause Analysis for AWS Cloud Failures</p>
+              </div>
+              <div class="project-meta">
+                <span class="project-when">Mar 2026 – May 2026</span>
+                <span class="project-tag">Arrow Technologies and Solutions</span>
+              </div>
+            </div>
+            <p class="project-desc">A cloud-native serverless web application that automates Root Cause Analysis generation for AWS cloud failures using generative AI and AWS services. Users submit incident details through a web interface, and the system automatically generates structured RCA reports covering root cause, impact analysis, resolution steps, prevention recommendations, and lessons learned — built on AWS CloudFront, Amazon S3, API Gateway, AWS Lambda, Amazon Bedrock, DynamoDB, and CloudFormation, following a fully serverless architecture.</p>
+            <ul class="project-points">
+              <li>Automated, AI-generated RCA reports</li>
+              <li>Serverless, cloud-native architecture</li>
+              <li>Secure report storage and history management</li>
+              <li>AI integration using Amazon Bedrock</li>
+              <li>Fast frontend delivery using CloudFront</li>
+              <li>REST API integration with API Gateway and Lambda</li>
+            </ul>
+            <div class="project-foot">
+              <div class="tool-chips">
+                <span class="tool-chip">AWS CloudFront</span>
+                <span class="tool-chip">S3</span>
+                <span class="tool-chip">API Gateway</span>
+                <span class="tool-chip">Lambda</span>
+                <span class="tool-chip">Amazon Bedrock</span>
+                <span class="tool-chip">DynamoDB</span>
+                <span class="tool-chip">CloudFormation</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <p class="project-desc">A cloud-native serverless web application that automates Root Cause Analysis generation for AWS cloud failures using generative AI and AWS services. Users submit incident details through a web interface, and the system automatically generates structured RCA reports covering root cause, impact analysis, resolution steps, prevention recommendations, and lessons learned — built on AWS CloudFront, Amazon S3, API Gateway, AWS Lambda, Amazon Bedrock, DynamoDB, and CloudFormation, following a fully serverless architecture.</p>
-        <ul class="project-points">
-          <li>Automated, AI-generated RCA reports</li>
-          <li>Serverless, cloud-native architecture</li>
-          <li>Secure report storage and history management</li>
-          <li>AI integration using Amazon Bedrock</li>
-          <li>Fast frontend delivery using CloudFront</li>
-          <li>REST API integration with API Gateway and Lambda</li>
-        </ul>
-        <div class="project-foot">
-          <p class="project-tools">AWS CloudFront · S3 · API Gateway · Lambda · Amazon Bedrock · DynamoDB · CloudFormation</p>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="sec sec-contact" id="contact">
     <div class="wrap">
-      <p class="eyebrow reveal">Contact</p>
+      <p class="eyebrow reveal"><span class="eyebrow-index">06</span>Contact</p>
       <h2 class="contact-headline reveal">Got a role or project in mind?</h2>
       <p class="contact-sub reveal">Open to SDE &amp; Cloud internships and full-time roles — I check this inbox daily.</p>
-      <a href="mailto:umeshrajput24196@gmail.com" class="contact-email reveal">umeshrajput24196@gmail.com</a>
+      <a href="mailto:umeshrajput24196@gmail.com" class="contact-email reveal magnetic">umeshrajput24196@gmail.com</a>
       <div class="hero-links reveal center">
         <a href="https://github.com/DevUmeshh" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/umeshjadhav09" target="_blank" rel="noopener">LinkedIn</a>
