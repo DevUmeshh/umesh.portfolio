@@ -165,7 +165,7 @@ function bindSpot(selector) {
     });
   });
 }
-bindSpot('.stack-row.spot, .achieve-item.spot, .project.spot');
+bindSpot('.tech-card.spot, .achieve-item.spot, .project.spot');
 
 // ---- TILT (achievement cards) ----
 function bindTilt(selector, intensity) {

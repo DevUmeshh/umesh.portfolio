@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -137,18 +138,40 @@
   <section class="sec" id="stack">
     <div class="wrap">
       <p class="eyebrow reveal"><span class="eyebrow-index">02</span>Tech stack</p>
-      <div class="stack-list reveal">
-        <div class="stack-row spot">
-          <h3><span class="stack-glyph" aria-hidden="true"></span>Full-Stack Development</h3>
-          <p>JavaScript · React · Node.js · Express · REST APIs · HTML &amp; CSS</p>
+      <p class="sec-lede reveal">Tools I reach for most, grouped by where they sit in the stack.</p>
+
+      <div class="tech-groups">
+        <div class="tech-group reveal">
+          <h3 class="tech-group-title">Full-Stack Development</h3>
+          <div class="tech-icons">
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-javascript-plain colored"></i></span><span class="tech-name">JavaScript</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-react-original colored"></i></span><span class="tech-name">React</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-nodejs-plain colored"></i></span><span class="tech-name">Node.js</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-express-original"></i></span><span class="tech-name">Express</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-html5-plain colored"></i></span><span class="tech-name">HTML5</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-css3-plain colored"></i></span><span class="tech-name">CSS3</span></div>
+          </div>
         </div>
-        <div class="stack-row spot">
-          <h3><span class="stack-glyph" aria-hidden="true"></span>Cloud &amp; DevOps</h3>
-          <p>AWS EC2 · AWS S3 · AWS IAM · CI/CD Pipelines · Docker · Git &amp; GitHub · Linux · Bash</p>
+
+        <div class="tech-group reveal">
+          <h3 class="tech-group-title">Cloud &amp; DevOps</h3>
+          <div class="tech-icons">
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span><span class="tech-name">AWS</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-docker-plain colored"></i></span><span class="tech-name">Docker</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-git-plain colored"></i></span><span class="tech-name">Git</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-github-original"></i></span><span class="tech-name">GitHub</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-linux-plain"></i></span><span class="tech-name">Linux</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-bash-plain"></i></span><span class="tech-name">Bash</span></div>
+          </div>
         </div>
-        <div class="stack-row spot">
-          <h3><span class="stack-glyph" aria-hidden="true"></span>Core CS &amp; Data</h3>
-          <p>C++ (DSA) · Python · SQL</p>
+
+        <div class="tech-group reveal">
+          <h3 class="tech-group-title">Core CS &amp; Data</h3>
+          <div class="tech-icons">
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-cplusplus-plain colored"></i></span><span class="tech-name">C++</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-python-plain colored"></i></span><span class="tech-name">Python</span></div>
+            <div class="tech-card spot"><span class="tech-icon"><i class="devicon-mysql-plain colored"></i></span><span class="tech-name">SQL</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -257,11 +280,11 @@
             </ul>
             <div class="project-foot">
               <div class="tool-chips">
-                <span class="tool-chip">React.js</span>
-                <span class="tool-chip">Node.js</span>
-                <span class="tool-chip">Express.js</span>
-                <span class="tool-chip">MongoDB</span>
-                <span class="tool-chip">Tailwind CSS</span>
+                <span class="tool-chip"><i class="devicon-react-original colored"></i>React.js</span>
+                <span class="tool-chip"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                <span class="tool-chip"><i class="devicon-express-original"></i>Express.js</span>
+                <span class="tool-chip"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                <span class="tool-chip"><i class="devicon-tailwindcss-plain colored"></i>Tailwind CSS</span>
                 <span class="tool-chip">Chart.js</span>
                 <span class="tool-chip">Google Maps API</span>
               </div>
@@ -303,13 +326,13 @@
             </ul>
             <div class="project-foot">
               <div class="tool-chips">
-                <span class="tool-chip">AWS CloudFront</span>
-                <span class="tool-chip">S3</span>
-                <span class="tool-chip">API Gateway</span>
-                <span class="tool-chip">Lambda</span>
-                <span class="tool-chip">Amazon Bedrock</span>
-                <span class="tool-chip">DynamoDB</span>
-                <span class="tool-chip">CloudFormation</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>CloudFront</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>S3</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>API Gateway</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>Lambda</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>Bedrock</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>DynamoDB</span>
+                <span class="tool-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>CloudFormation</span>
               </div>
             </div>
           </div>
