@@ -1,6 +1,3 @@
-# Umesh Jadhav - Portfolio
-
-A static, dependency - free portfolio (plain HTML/CSS/JS, no build step) with a light/dark theme toggle and an editorial, content-first design — no terminal chrome, no stock icon sets, no filler animation.
 
 ## File structure
 
